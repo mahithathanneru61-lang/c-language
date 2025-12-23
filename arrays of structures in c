@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+struct Student {
+    int rollNo;
+    char name[50];
+    float marks;
+};
+int main() {
+    struct Student s[3]; // Array of 3 structures
+    int i;
+    for(i = 0; i < 3; i++) {
+        printf("Enter details for student %d (RollNo Name Marks):\n", i + 1);
+        scanf("%d %s %f", &s[i].rollNo, s[i].name, &s[i].marks);
+    }
+    printf("\nStudent Records:\n");
+    printf("RollNo\tName\tMarks\n");
+    for(i = 0; i < 3; i++) {
+        printf("%d\t%s\t%.2f\n", s[i].rollNo, s[i].name, s[i].marks);
+    }
+    return 0;
+}
